@@ -100,5 +100,4 @@ export default class ModelDiagram extends ModelBase {
     }
 
     // endregion: Getters
-
 }
