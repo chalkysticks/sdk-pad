@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ChalkySticks SDK Pad Example</title>
+
+		<!-- Link -->
+		<link rel="icon" href="https://static.chalkysticks.com/favicon.png" />
+
+		<!-- Style -->
+		<style>
+			main {
+				display: flex;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<ul id="list"></ul>
+			<div id="preview"></div>
+		</main>
+
+		<!-- Script -->
+		<script>
+			window.env = {
+				app: {
+					api_url: 'https://api.chalkysticks.com/v2',
+				},
+			};
+		</script>
+		<script type="module">
+			import { CollectionDiagram, ModelDiagram } from '../build/web/chalkysticks-pad.js';
+
+			const listElement = document.querySelector('#list');
+			const previewElement = document.querySelector('#preview');
+			const diagramCollection = new CollectionDiagram();
+
+			/**
+			 * Add click actions
+			 */
+			listElement.addEventListener('click', Handle_OnClickList);
+
+			/**
+			 * Initialize
+			 */
+			(async function () {
+				const response = await diagramCollection.fetch();
+
+				// Load into list
+				diagramCollection.each((diagramModel) => createListItem(diagramModel, listElement));
+			})();
+
+			/**
+			 * @param ModelDiagram model
+			 * @param HTMLElement parentNode
+			 * @return HTMLElement
+			 */
+			function createListItem(model, parentNode) {
+				const childNode = document.createElement('li');
+
+				// Populate markup
+				childNode.innerHTML = `
+					<button value="${model.getHash()}">${model.getHash()}</button>
+				`;
+
+				// Add node to DOM
+				parentNode.appendChild(childNode);
+
+				return childNode;
+			}
+
+			/**
+			 * @param MouseEvent e
+			 * @return void
+			 */
+			async function Handle_OnClickList(e) {
+				e.preventDefault();
+
+				const target = e.target;
+				const value = target.value;
+				const diagramModel = diagramCollection.findWhere({ hash: value });
+
+				const url = diagramModel.getUrl();
+				const svg = await diagramModel.toSvg();
+				const png = await diagramModel.toPng();
+				const png64 = await diagramModel.toPngBase64();
+
+				console.log('URL', url);
+				console.log('SVG', svg);
+
+				// previewElement.innerHTML = svg;
+				previewElement.innerHTML = `<img height="300" src="${png64}" />`;
+			}
+		</script>
+	</body>
+</html>

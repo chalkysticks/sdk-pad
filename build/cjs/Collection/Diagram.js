@@ -6,7 +6,7 @@ class CollectionDiagram extends sdk_core_1.CollectionBase {
     constructor() {
         super(...arguments);
         this.endpoint = 'diagrams';
-        this.model = Diagram_1.default;
+        this.model = new Diagram_1.default();
     }
 }
 exports.default = CollectionDiagram;

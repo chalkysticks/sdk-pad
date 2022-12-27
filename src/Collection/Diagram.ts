@@ -2,20 +2,14 @@ import { CollectionBase } from '@chalkysticks/sdk-core';
 import ModelDiagram from '../Model/Diagram';
 
 /**
- * ┌────────────────────────────────────────────────────────────────────────────┐
- * │                                                                            │
- * │ CollectionDiagram                                                          │
- * │                                                                            │
- * │ @namespace Collection                                                      │
- * │ @package   SDK-Pad                                                         │
- * │ @project   ChalkySticks                                                    │
- * │                                                                            │
- * └────────────────────────────────────────────────────────────────────────────┘
+ * @class CollectionDiagram
+ * @package Collection
+ * @project ChalkySticks SDK Pad
  */
-export default class CollectionDiagram extends CollectionBase {
+export default class CollectionDiagram extends CollectionBase<ModelDiagram> {
     /**
      * Endpoint key
-     * e.g. https://api.chalkysticks.com/v1/diagram
+     * e.g. https://api.chalkysticks.com/v1/diagrams
      *
      * @type string
      */
@@ -26,5 +20,5 @@ export default class CollectionDiagram extends CollectionBase {
      *
      * @type ModelDiagram
      */
-    public model: any = ModelDiagram;
+    public model: ModelDiagram = new ModelDiagram();
 }
