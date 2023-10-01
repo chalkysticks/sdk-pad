@@ -4,11 +4,11 @@
         "url": "https://github.com/chalkysticks/sdk-pad/issues"
     },
     "dependencies": {
-        "@chalkysticks/mrm-preset": "github:chalkysticks/mrm-preset",
         "@chalkysticks/sdk-core": "github:chalkysticks/sdk-core"
     },
     "description": "ChalkySticks SDK web-based clients for Pad",
     "devDependencies": {
+        "@chalkysticks/mrm-preset": "github:chalkysticks/mrm-preset",
         "@types/chai": "^4.2.14",
         "@types/mocha": "^8.2.0",
         "@typescript-eslint/eslint-plugin": "^4.13.0",
