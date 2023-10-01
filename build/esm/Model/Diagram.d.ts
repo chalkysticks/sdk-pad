@@ -1,5 +1,5 @@
-import { ModelBase } from '@chalkysticks/sdk-core';
-export default class ModelDiagram extends ModelBase {
+import { Model } from '@chalkysticks/sdk-core';
+export declare class Diagram extends Model.Base {
     endpoint: string;
     fields: string[];
     protected imageUrl: string;

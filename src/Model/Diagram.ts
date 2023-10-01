@@ -1,14 +1,14 @@
-import { ModelBase } from '@chalkysticks/sdk-core';
+import { Model } from '@chalkysticks/sdk-core';
 
 /**
  * We're intentionally not building the diagrams here. We're keeping that
  * behind the server wall.
  *
- * @class ModelDiagram
+ * @class Diagram
  * @package Model
  * @project ChalkySticks SDK Pad
  */
-export default class ModelDiagram extends ModelBase {
+export class Diagram extends Model.Base {
     /**
      * Endpoint key
      * e.g. https://api.chalkysticks.com/v3/diagrams
@@ -40,7 +40,6 @@ export default class ModelDiagram extends ModelBase {
 	 * @type string
 	 */
 	protected imageUrl: string = 'https://pad.chalkysticks.com/image/';
-
 
     // region: Getters
     // ---------------------------------------------------------------------------

@@ -1,12 +1,12 @@
-import { CollectionBase } from '@chalkysticks/sdk-core';
-import ModelDiagram from '../Model/Diagram';
+import { Collection } from '@chalkysticks/sdk-core';
+import * as Model from '../Model';
 
 /**
- * @class CollectionDiagram
+ * @class Collection
  * @package Collection
  * @project ChalkySticks SDK Pad
  */
-export default class CollectionDiagram extends CollectionBase<ModelDiagram> {
+export class Diagram extends Collection.Base<Model.Diagram> {
     /**
      * Endpoint key
      * e.g. https://api.chalkysticks.com/v1/diagrams
@@ -18,7 +18,7 @@ export default class CollectionDiagram extends CollectionBase<ModelDiagram> {
     /**
      * Model object instantiated by this collection
      *
-     * @type ModelDiagram
+     * @type Model.Diagram
      */
-    public model: ModelDiagram = new ModelDiagram();
+    public model: Model.Diagram = new Model.Diagram();
 }

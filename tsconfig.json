@@ -1,9 +1,8 @@
 {
-    "compilerOptions": {
-        "outDir": "build/esm",
-    },
-    "extends": "./node_modules/@chalkysticks/mrm-preset/tsconfig.mjs.json",
-    "include": [
-        "src/**/*.ts",
-    ]
-  }
+	"compilerOptions": {
+		"outDir": "build/esm",
+		"rootDir": "src"
+	},
+	"extends": "./node_modules/@chalkysticks/mrm-preset/tsconfig.mjs.json",
+	"include": ["./src/**/*.ts"]
+}
