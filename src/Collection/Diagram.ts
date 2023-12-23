@@ -7,18 +7,18 @@ import * as Model from '../Model';
  * @project ChalkySticks SDK Pad
  */
 export class Diagram extends Collection.Base<Model.Diagram> {
-    /**
-     * Endpoint key
-     * e.g. https://api.chalkysticks.com/v1/diagrams
-     *
-     * @type string
-     */
-    public endpoint: string = 'diagrams';
+	/**
+	 * Endpoint key
+	 * e.g. https://api.chalkysticks.com/v1/diagrams
+	 *
+	 * @type string
+	 */
+	public endpoint: string = 'diagrams';
 
-    /**
-     * Model object instantiated by this collection
-     *
-     * @type Model.Diagram
-     */
-    public model: Model.Diagram = new Model.Diagram();
+	/**
+	 * Model object instantiated by this collection
+	 *
+	 * @type Model.Diagram
+	 */
+	public model: Model.Diagram = new Model.Diagram();
 }

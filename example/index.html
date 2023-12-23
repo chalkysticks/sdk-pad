@@ -21,18 +21,26 @@
 
 		<!-- Script -->
 		<script>
-			window.env = {
-				app: {
-					api_url: 'https://api.chalkysticks.com/v2',
-				},
-			};
+			// This will set the global base api url
+			// window.env = {
+			// 	app: {
+			// 		api_url: 'https://api.chalkysticks.com/v2',
+			// 	},
+			// };
 		</script>
 		<script type="module">
-			import { Collection, Model } from '../build/web/chalkysticks-pad.js';
+			import { Core, Collection, Model } from '../build/web/chalkysticks-pad.js';
+
+			// Log
+			console.log('ChalkySticks Core', Core);
 
 			const listElement = document.querySelector('#list');
 			const previewElement = document.querySelector('#preview');
-			const diagramCollection = new Collection.Diagram();
+
+			// const diagramCollection = new Collection.Diagram();
+			const diagramCollection = new Collection.Diagram({
+				baseUrl: 'https://api.chalkysticks.com/v2',
+			});
 
 			/**
 			 * Add click actions
