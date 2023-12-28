@@ -1,4 +1,5 @@
-import { expect } from 'chai';
+import test from 'node:test';
+import assert from 'node:assert/strict';
 import { Collection, Model } from '../src';
 
 // Setup
@@ -21,10 +22,8 @@ const collection: Collection.Diagram = Collection.Diagram.hydrate([
 	},
 ]);
 
-describe('Diagram - Local', () => {
-	it('should have a name', () => {
-		const model: Model.Diagram = collection.at(0) as Model.Diagram;
+test('Diagram - Local', () => {
+	const model: Model.Diagram = collection.at(0) as Model.Diagram;
 
-		expect(model.getHash()).to.equal('88854');
-	});
+	assert.equal(model.getHash(), '88854', 'checking the hash');
 });
