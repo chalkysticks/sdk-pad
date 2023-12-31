@@ -11,7 +11,7 @@
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.13.0",
 		"@typescript-eslint/parser": "^4.13.0",
-		"esbuild": "^0.19.10",
+		"esbuild": "^0.19.11",
 		"eslint": "^7.17.0",
 		"tsx": "^4.7.0",
 		"typescript": "^5.2.2"
@@ -47,7 +47,7 @@
 	},
 	"scripts": {
 		"build": "tsc -p tsconfig.json && yarn build:web",
-		"build:web": "./node_modules/.bin/esbuild src/index.ts --bundle --minify --sourcemap --target=chrome62 --format=esm --outfile=build/web/chalkysticks-pad.js",
+		"build:web": "esbuild src/index.ts --bundle --minify --sourcemap --target=chrome62 --format=esm --outfile=build/web/chalkysticks-pad.js",
 		"example": "http-server",
 		"test": "tsc --noEmit && node --import tsx --test test/*.spec.ts"
 	},
